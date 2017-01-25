@@ -1,0 +1,54 @@
+<snippet>
+	<content>
+<![CDATA[
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width,height=device-height">
+    <script src="http://code.ionicframework.com/1.1.0/js/ionic.bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/1.1.0/css/ionic.min.css">
+</head>
+
+<body ng-controller="myCtrl">
+    <ion-header-bar align-title="center" class="bar-positive">
+       ${2:
+        <button class="button button-calm" ng-click="doSomething()">
+            button-calm
+        </button>
+       }
+        <h1 class="title">${1:輸入標題}</h1>
+       ${3:
+        <button class="button button-dark" ng-click="doSomething()">
+            button-dark
+        </button>
+       }
+    </ion-header-bar>
+
+    <ion-content padding="true">
+
+        <ion-list>
+          <div class="item item-divider">${4:輸入標題}</div>
+          <ion-item collection-repeat="item in items">
+
+          </ion-item>
+        </ion-list>
+    </ion-content>
+
+</body>
+
+</html>
+<script>
+angular.module("myApp", ["ionic"])
+    .controller("myCtrl", function(\$scope) {
+
+     
+    });
+</script>
+]]>
+	</content>
+	<tabTrigger>ipage</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

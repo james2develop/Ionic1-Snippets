@@ -1,0 +1,38 @@
+<snippet>
+	<content>
+<![CDATA[
+
+<a class="button button-clear icon ion-ios-minus-outline" ng-click="flag.showDelete=!flag.showDelete;flag.showReorder=false;"></a>
+<a class="button" ng-click="flag.showReorder=!flag.showReorder;flag.showDelete=false;">重新排序</a>
+
+<ion-list show-delete="flag.showDelete" show-reorder="flag.showReorder">
+	<ion-item ng-repeat="item in items">
+		{{item}}!
+		<ion-option-button class="button-calm ion-edit"></ion-option-button>
+
+		<ion-delete-button class="ion-minus-circled" ng-click="delete_item(item)"></ion-delete-button>
+		<ion-reorder-button class="ion-navicon" on-reorder="move_item(item,\$fromIndex,\$toIndex)"></ion-reorder-button>
+	</ion-item>
+</ion-list>
+
+//定義button的開關狀態
+\$scope.flag={showDelete:false,showReorder:false};
+\$scope.items=["Chinese","English","German","Italian","Janapese","Sweden","Koeran","Russian","French"];
+
+\$scope.delete_item=function(item){
+	var idx = \$scope.items.indexOf(item);
+	\$scope.items.splice(idx,1);
+};
+
+\$scope.move_item = function(item, fromIndex, toIndex) {
+
+	\$scope.items.splice(fromIndex, 1);
+	\$scope.items.splice(toIndex, 0, item);
+};
+
+]]>
+	</content>
+	<tabTrigger>ilist</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

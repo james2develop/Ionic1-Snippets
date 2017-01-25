@@ -1,0 +1,32 @@
+<snippet>
+	<content>
+<![CDATA[
+<!-- ion-refresher 要包在容器裡, ex:icon-content -->
+<ion-content>
+	<ion-refresher pulling-text="Pull to refresh..."	on-refresh="doRefresh()" spinner="android">
+	</ion-refresher>
+
+	<ion-list>
+		<ion-item collection-repeat="item in items">
+			{{item}}
+		</ion-item>
+	</ion-list>
+</ion-content>
+
+
+\$scope.items = ['item1','item2','item3'];
+	var base = 1;
+	\$scope.doRefresh = function() {
+		for(var i=0;i<10;i++,base++){
+			\$scope.items.unshift(["item ",base].join(""));
+		}
+
+		\$scope.\$broadcast("scroll.refreshComplete");
+	};
+
+]]>
+	</content>
+	<tabTrigger>irefresher</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

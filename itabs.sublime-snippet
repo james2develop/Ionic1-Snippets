@@ -1,0 +1,49 @@
+<snippet>
+	<content>
+<![CDATA[
+/*
+Tabs屬性
+顯示於上方  : tabs-top 
+加強顯示效果: tabs-striped
+
+Tab屬性
+點選前後圖示: icon-on icon-off
+訊號數及圖示: badge=訊息數   badge-style=badge-顏色
+是否停用    : disabled=[true | false]
+背景顏色    : 顏色名稱-bg
+*/
+<ion-tabs class="tabs-striped">
+	<!-- 頁籤1 -->
+	<ion-tab title="${1:tab1}" icon-on="ion-ios-email" icon-off="ion-ios-email-outline" badge=10 badge-style="badge-assertive">
+	    <ion-view>
+	        <ion-content class="calm-bg">
+	            內容
+	        </ion-content>
+	    </ion-view>
+	</ion-tab>
+	
+	<!-- 頁籤2 -->
+	<ion-tab title="${2:tab2}">
+	    <ion-view>
+	        <ion-content class="balanced-bg">
+	            內容
+	        </ion-content>
+	    </ion-view>
+	</ion-tab>
+
+	<!-- 頁籤3 -->
+	<ion-tab title="${3:tab3}">
+	    <ion-view>
+	        <ion-content class="energized-bg">
+	            內容
+	        </ion-content>
+	    </ion-view>
+	</ion-tab>
+
+</ion-tabs>
+]]>
+	</content>
+	<tabTrigger>itabs</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

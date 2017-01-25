@@ -1,0 +1,10 @@
+<snippet>
+	<content>
+<![CDATA[
+${10:白${1:light} 黑${2:dark} 灰${3:stable} 藍${4:positive} 淺藍${5:calm} 綠${6:balanced} 黃${7:energized} 紅${8:assertive} 紫${9:royal}}
+]]>
+	</content>
+	<tabTrigger>icolor</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

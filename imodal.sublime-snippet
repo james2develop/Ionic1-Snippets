@@ -1,0 +1,57 @@
+<snippet>
+	<content>
+<![CDATA[
+//my-modal.html檔案內容
+<ion-modal-view>
+	<ion-header-bar class="bar-positive">
+	</ion-header-bar>
+	<ion-content>	
+	</ion-content>
+</ion-modal-view>
+
+<button class="button button-block" ng-click="openModal();">打開模態對話框</button>
+
+.controller("myCtrl",['\$scope','\$ionicModal',function(\$scope, \$ionicModal) {
+
+
+	\$ionicModal.fromTemplateUrl("my-modal.html", {
+		scope: \$scope,
+        animation: "slide-in-up"
+	}).then(function(modal) {
+		\$scope.modal = modal;
+	});
+
+
+	\$scope.openModal = function() {
+		\$scope.modal.show();
+	};
+	\$scope.closeModal = function() {
+		\$scope.modal.hide();
+	};
+
+    \$scope.removeModal = function() {
+        \$scope.modal.remove();
+    };
+
+	//Cleanup the modal when we are done with it!
+	\$scope.\$on("\$destroy", function() {
+        console.log('modal.$destroy');
+		\$scope.modal.remove();
+	});
+	// Execute action on hide modal
+	\$scope.\$on("modal.hidden", function() {
+		// Execute action
+        console.log('modal.hidden');
+	});
+	// Execute action on remove modal
+	\$scope.\$on("modal.removed", function() {
+		// Execute action
+        console.log('modal.removed');
+	});
+}]);
+]]>
+	</content>
+	<tabTrigger>imodal</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

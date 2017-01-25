@@ -1,0 +1,102 @@
+<snippet>
+	<content>
+<![CDATA[
+<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+<ion-list>
+    <ion-item ng-repeat="item in items" ng-bind="item.Station"></ion-item>
+</ion-list>
+
+//api.json檔
+[
+  {
+    "Station": "板橋站",
+    "Destination": "南港展覽館站",
+    "UpdateTime": "2015-08-29T23:29:58.763"
+  },
+  {
+    "Station": "市政府站",
+    "Destination": "頂埔站",
+    "UpdateTime": "2015-08-29T23:29:47.69"
+  },
+  {
+    "Station": "南港站",
+    "Destination": "頂埔站",
+    "UpdateTime": "2015-08-29T23:29:47.69"
+  },
+  {
+    "Station": "大坪林站",
+    "Destination": "松山站",
+    "UpdateTime": "2015-08-29T23:29:46.513"
+  },
+  {
+    "Station": "南京復興站",
+    "Destination": "松山站",
+    "UpdateTime": "2015-08-29T23:29:46.513"
+  },
+  {
+    "Station": "台北101/世貿站",
+    "Destination": "淡水站",
+    "UpdateTime": "2015-08-29T23:29:58.827"
+  },
+  {
+    "Station": "劍潭站",
+    "Destination": "象山站",
+    "UpdateTime": "2015-08-29T23:29:49.76"
+  },
+  {
+    "Station": "石牌站",
+    "Destination": "淡水站",
+    "UpdateTime": "2015-08-29T23:29:49.76"
+  },
+  {
+    "Station": "北投站",
+    "Destination": "淡水站",
+    "UpdateTime": "2015-08-29T23:30:09.13"
+  },
+  {
+    "Station": "台北橋站",
+    "Destination": "南勢角站",
+    "UpdateTime": "2015-08-29T23:29:54.747"
+  },
+  {
+    "Station": "三重站",
+    "Destination": "迴龍站",
+    "UpdateTime": "2015-08-29T23:30:14.963"
+  },
+  {
+    "Station": "松江南京站",
+    "Destination": "迴龍站",
+    "UpdateTime": "2015-08-29T23:30:14.963"
+  },
+  {
+    "Station": "大橋頭站",
+    "Destination": "蘆洲站",
+    "UpdateTime": "2015-08-29T23:29:54.103"
+  }
+]
+
+
+.controller('myCtrl', ['\$scope', '\$timeout', '\$ionicBackdrop', '\$http', function(\$scope, \$timeout, \$ionicBackdrop, \$http) {
+
+    \$scope.doRefresh = function() {
+        \$ionicBackdrop.retain()
+
+        \$timeout(function() {
+            \$http.get('api.json')
+                .success(function(newItems) {
+                    \$scope.items = newItems;
+                })
+                .finally(function() {
+                    \$scope.\$broadcast('scroll.refreshComplete');
+                    \$ionicBackdrop.release()
+                });
+        }, 1000);
+
+    };
+}]);
+]]>
+	</content>
+	<tabTrigger>ihttpget</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

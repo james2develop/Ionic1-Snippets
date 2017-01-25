@@ -1,0 +1,32 @@
+<snippet>
+	<content>
+<![CDATA[
+
+<ion-nav-bar class="bar-${1:顏色}">
+    <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-nav-view></ion-nav-view>
+
+//設定 ${2:stateName},${3:stateName} state,預設會顯示 ${4:} state
+.config(['\$stateProvider',function(\$stateProvider) {
+	\$stateProvider
+		.state("${2:}",{
+			//建立 ${2:} state檔案
+		   	templateUrl:"${2:}.html"
+		})
+		.state("${3:}",{
+			//建立 ${3:} state檔案
+		    templateUrl:"${3:}.html"
+		})
+}])
+.controller('firstCtrl', ['\$scope','\$state', function (\$scope,\$state) {
+	//預設State 是 ${4:} 
+	\$state.go("${4:預設stateName}}");
+}])	
+]]>
+	</content>
+	<tabTrigger>inavbar</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

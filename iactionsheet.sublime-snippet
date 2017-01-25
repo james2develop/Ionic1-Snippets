@@ -1,0 +1,46 @@
+<snippet>
+	<content>
+<![CDATA[
+
+<button class="button" ng-click="showActionsheet()">
+	
+
+.controller('myCtrl',['\$scope','\$ionicActionSheet',function (\$scope, \$ionicActionSheet) {
+
+  \$scope.showActionsheet = function () {
+
+    \$ionicActionSheet.show({
+      titleText: '${1:標題名稱}',
+      buttons: [
+        {
+          text: '${2:按鈕名稱}'
+        },
+        {
+          text: '${3:按鈕名稱}'
+        },
+      ],
+      buttonClicked: function (index) {
+        console.log('BUTTON CLICKED', index);
+
+        return true;
+      },
+
+      cancelText: '${4:取消按鈕名稱}',
+      cancel: function () {
+        console.log('CANCELLED');
+      },
+      
+      destructiveText: '${5:刪除按鈕名稱}',
+      destructiveButtonClicked: function () {
+        console.log('DESTRUCT');
+
+        return true;
+      }
+    });
+  };
+]]>
+	</content>
+	<tabTrigger>iactionsheet</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

@@ -1,0 +1,17 @@
+<snippet>
+	<content>
+<![CDATA[
+<ion-checkbox class="checkbox-calm" collection-repeat="item in items" ng-model="item.selected">
+    {{item.label}} : {{item.selected}}
+</ion-checkbox>
+ \$scope.items = [
+    { label: "HTML5",selected: true },
+    { label: "CSS3"},
+    { label: "ECMAScript6" }
+ ];
+]]>
+	</content>
+	<tabTrigger>icheckbox</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

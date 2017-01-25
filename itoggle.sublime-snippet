@@ -1,0 +1,17 @@
+<snippet>
+	<content>
+<![CDATA[
+<ion-toggle toggle-class="toggle-dark" collection-repeat="item in items" ng-model="item.selected">
+	{{item.text}} / {{item.selected}}
+</ion-toggle>
+\$scope.items = [
+	{ text: "HTML5" },
+	{ text: "ECMAScript6", selected: true },
+	{ text: "CSS3",        selected: true }
+];
+]]>
+	</content>
+	<tabTrigger>itoggle</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

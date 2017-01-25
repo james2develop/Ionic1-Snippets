@@ -1,0 +1,13 @@
+<snippet>
+	<content>
+<![CDATA[
+${12:白${1:light} 黑${2:dark} 灰${3:stable} 藍${4:positive} 淺藍${5:calm} 綠${6:balanced} 黃${7:energized} 紅${8:assertive} 紫${9:royal}}
+<button class="button icon-left ion-home button-${10:}" ng-click="${11:doSomething()}">
+  ${13:按鈕文字}
+</button>
+]]>
+	</content>
+	<tabTrigger>ibutton</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

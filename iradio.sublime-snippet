@@ -1,0 +1,22 @@
+<snippet>
+	<content>
+<![CDATA[
+<div class="item item-divider">Your choice : {{data.choice}}</div>
+<ion-radio radio-color="energized" ng-repeat="item in items" ng-model="data.choice" ng-value="item">
+    {{item}}
+</ion-radio>
+
+\$scope.items = ["HTML5", "ES6", "CSS3"];
+        
+// 1.建議與ngModel雙向綁定用物件{} , 不要用字串string
+// 2.回傳後端的值--> rec.choice
+// 3.ng-value 動態填入資料
+// 4.點選後 a.ng-value的值傳給ng-model   b.ng-model動態將值雙向綁定到 data.choice
+// 5.當ngModel的值等於 ng-value 其中一個時, 該選項即會被選取
+\$scope.data = { choice: "CSS3" };
+]]>
+	</content>
+	<tabTrigger>iradio</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

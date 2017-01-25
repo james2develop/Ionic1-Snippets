@@ -1,0 +1,23 @@
+<snippet>
+	<content>
+<![CDATA[
+<h2 ng-click="${1:action}()">\$ionicBackdrop</h2>
+
+
+.controller( 'myCtrl',['\$scope','\$timeout' ,'\$ionicBackdrop',function(\$scope,\$timeout,\$ionicBackdrop){
+
+	\$scope.${1} = function() {
+		//retain()顯示背景
+		\$ionicBackdrop.retain();
+	
+		//預設1秒後,release()背景消失
+		\$timeout(function() {    
+			\$ionicBackdrop.release();
+	    }, 1000);
+}; 
+]]>
+	</content>
+	<tabTrigger>ibackdrop</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

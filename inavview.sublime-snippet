@@ -1,0 +1,52 @@
+<snippet>
+	<content>
+<![CDATA[
+<ion-view title="${1:標題名稱}">
+    
+    <!-- 重設ion-nav-bar -->
+    <ion-nav-title>
+        <img src="" style="height:100%">
+    </ion-nav-title>
+
+	<!-- 增加ion-nav-bar 左側button -->
+    <ion-nav-buttons side="left">
+        <button class="button" ng-click="doSomething()">
+            ${2:buttonName}
+        </button>
+    </ion-nav-buttons>
+
+	<!-- 增加ion-nav-bar 右側button -->
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="doSomething()">
+            ${3:buttonName}
+        </button>
+    </ion-nav-buttons>
+
+	<!-- View內容,padding表示內縮 -->
+    <ion-content ${4:class="padding"}>
+        
+        <!-- card表示卡片形式 -->
+        <ion-list ${5:type="card"}>
+
+            <!-- transition: ${6:ios} 慢, ${7:android} 快; direction: ${9:forward} 右至左, ${10:back} 左至右 -->
+            <ion-item ui-sref="music" class="item-icon-right" nav-transition="${8:轉場方式}" nav-direction="${11:轉場方向}">
+                ${12:item 文字}
+
+                <!-- 增加ion-item 右側icon圖示 -->
+                <icon class="icon ion-chevron-right"></icon>
+            </ion-item>
+        </ion-list>
+
+		<!-- ion + Text 形式button -->
+        <button class="button ion ion-home" ui-sref="home">${13:buttonName}</button>
+
+        <!--include ${14:文字檔名}.txt 文字檔-->
+        <p ng-include="'${14:文字檔名}.txt'"></p>
+    </ion-content>
+</ion-view>
+]]>
+	</content>
+	<tabTrigger>inavview</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

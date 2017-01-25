@@ -1,0 +1,47 @@
+<snippet>
+	<content>
+<![CDATA[
+<ion-side-menus>
+	
+	<!-- 主頁內容; drag-content可否拖拉 , edge-drag-threshold拖拉距離 -->
+	<ion-side-menu-content ${1:drag-content="false"} edge-drag-threshold=${2:25}>
+		<ion-header-bar class="bar-positive">
+
+			<!-- 標題列的左側button -->
+			<a menu-toggle="left" class="button icon ion-navicon"></a>
+
+			<h1 class="title">${3:標題}</h1>
+			
+			<!-- 標題列的右側button -->
+			<a menu-toggle="right" class="button icon ion-grid"></a>
+
+		</ion-header-bar>
+
+		<ion-content>
+			
+			<!-- 關閉側欄 -->
+			<a menu-close="" class="button icon ion-ios-close"></a>
+		</ion-content>
+	</ion-side-menu-content>
+
+	<!-- 左側內容 -->
+	<ion-side-menu side="left" width="${4:150}" expose-aside-when="(min-width:${5:500}px)">
+		<ion-content class="balanced-bg">
+
+		</ion-content>
+	</ion-side-menu>
+
+	<!-- 右側內容 -->
+	<ion-side-menu side="right" width="${6:150}">
+		<ion-content class="calm-bg">
+
+		</ion-content>
+	</ion-side-menu>
+
+</ion-side-menus>
+]]>
+	</content>
+	<tabTrigger>isidemenus</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>

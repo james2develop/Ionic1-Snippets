@@ -1,0 +1,40 @@
+<snippet>
+	<content>
+<![CDATA[
+<!-- ion-infinite-scroll要包在容器裡, ex:ion-content 
+	 on-infinite 滑到底部就執行,distance=數字 距離底部的百分比,icon 載入時的icon,
+	 immediate-check=[True | False] 載入時立即檢查滑動範圍
+-->
+<ion-content>
+
+	<ion-infinite-scroll   on-infinite="load_more();" icon="ion-load-a" distance="1%" immediate-check="true">
+	</ion-infinite-scroll>
+
+    <ion-list>
+    	<ion-item collection-repeat="item in items">
+    		{{item}}
+    	</ion-item>
+    </ion-list>
+	
+</ion-content>
+
+
+angular.module("myApp",["ionic"])
+.controller("myCtrl",function(\$scope,\$timeout){
+	\$scope.items = ['1111','22222'];
+	var base = 0;
+	\$scope.load_more = function(){
+		\$timeout(function(){
+			for(var i=0;i<3;i++,base++)
+				\$scope.items.push(["item ",base].join(""));
+			\$scope.\$broadcast("scroll.infiniteScrollComplete");
+		},500);
+	};
+});
+
+]]>
+	</content>
+	<tabTrigger>iinfinite</tabTrigger>
+	<scope></scope>
+	<description>james2Develop</description>
+</snippet>
